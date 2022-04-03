@@ -1,14 +1,14 @@
 import ghpages from "gh-pages";
 import fs from "fs";
 
-const indexHtml = fs.readFileSync("../dist/index.html", "utf8");
+const indexHtml = fs.readFileSync("./dist/index.html", "utf8");
 
 const regex = /="\//g;
 if (regex.test(indexHtml)) {
   console.log("Found relative path in index.html, fixing...");
   const newHtml = indexHtml.replace(/="\//g, '="./');
   console.log("Writing new index.html...");
-  fs.writeFileSync("../dist/index.html", newHtml);
+  fs.writeFileSync("./dist/index.html", newHtml);
   console.log("Done!");
 }
 

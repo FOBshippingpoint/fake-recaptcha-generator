@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "publish": "node run publish.js"
+    "deploy": "vite build && node ./scripts/deploy.js"
   },
   "author": {
     "name": "FOBshippingpoint"
